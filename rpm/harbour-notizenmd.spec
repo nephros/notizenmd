@@ -24,6 +24,8 @@ Source100:  harbour-notizenmd.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   libsailfishapp-launcher
 Requires:   pyotherside-qml-plugin-python3-qt5
+Requires(post): sailfishshare-components
+Requires(postun): sailfishshare-components
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -64,6 +66,20 @@ rm -rf %{buildroot}
 desktop-file-install --delete-original       \
   --dir %{buildroot}%{_datadir}/applications             \
    %{buildroot}%{_datadir}/applications/*.desktop
+
+%post
+# >> post
+if [ $1 = 1 ]; then # install
+/usr/bin/sailfish-share-update-cache ||:
+fi
+# << post
+
+%postun
+# >> postun
+if [ $1 = 0 ]; then # uninstall
+/usr/bin/sailfish-share-update-cache ||:
+fi
+# << postun
 
 %files
 %defattr(-,root,root,-)

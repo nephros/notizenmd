@@ -38,6 +38,11 @@ Requires:
   - pyotherside-qml-plugin-python3-qt5
 #  - sailfish-components-webview-qt5
 
+RequiresPostUn:
+  - sailfishshare-components
+RequiresPost:
+  - sailfishshare-components
+
 # All installed files
 Files:
   - '%defattr(0644,root,root,-)'
