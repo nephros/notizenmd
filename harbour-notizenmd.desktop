@@ -8,7 +8,9 @@ Name=Notizen.md
 X-Share-Methods=textfiles
 
 [X-Share Method textfiles]
-Description=Edit with Notizen.md
+Description=Create a Note
+Description[en]=Create a Note
+Description[de]=Eine Notiz erstellen
 Capabilities=text/plain;text/markdown;text/x-markdown
 SupportsMultipleFiles=no
 
