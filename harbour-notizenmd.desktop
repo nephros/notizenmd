@@ -2,5 +2,18 @@
 Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=harbour-notizenmd
-Exec=sailfish-qml harbour-notizenmd
+#Exec=sailfish-qml harbour-notizenmd
+Exec=/usr/bin/invoker --type=silica-qt5 /usr/bin/sailfish-qml harbour-notizenmd
 Name=Notizen.md
+X-Share-Methods=textfiles
+
+[X-Share Method textfiles]
+Description=Edit with Notizen.md
+Capabilities=text/plain;text/markdown;text/x-markdown
+SupportsMultipleFiles=no
+
+[X-Sailjail]
+ApplicationName=Notizen.md
+OrganizationName=org.fooxl
+#Permissions=Internet;RemovableMedia;UserDirs;WebView;
+Permissions=RemovableMedia;UserDirs;WebView;

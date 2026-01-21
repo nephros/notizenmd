@@ -34,6 +34,18 @@ ApplicationWindow
         property bool editNoteOnCreate: false
     }
 
+    // as ShareProvider is not supported on all SFOS releases the same way,
+    // use a Loader for backwards compatability:
+    property bool sharingAvailable: share.status === Loader.Ready
+    onSharingAvailableChanged: {
+        if (sharingAvailable) {
+            console.info("Sharing activated.")
+        }
+    }
+    Loader { id: share
+        source: Qt.resolvedUrl("share/ShareComponent.qml")
+    }
+
     FileIO {
         id: currentFile
     }

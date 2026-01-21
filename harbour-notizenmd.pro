@@ -33,6 +33,7 @@ DISTFILES += qml/harbour-notizenmd.qml \
     qml/pages/MdViewPage.qml \
     qml/components/MdTextArea.qml \
     qml/components/MdWebView.qml \
+    qml/share/ShareComponent.qml \
     qml/pages/About.qml
 
 
